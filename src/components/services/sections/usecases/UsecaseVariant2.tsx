@@ -1,0 +1,180 @@
+import { IconNameSolid } from "@/components/IconLibrary";
+
+type UseCasesData = {
+  variant: 1 | 2 | 3 | 4;
+  heading: string;
+  subheading: string;
+  useCase: {
+    title: string;
+    description: string;
+    image?: string;
+    accent?: string;
+    icon?:string;
+  }[];
+};
+export default function UseCases({
+  variant,
+  heading,
+  subheading,
+  useCase,
+}: UseCasesData) {
+  return (
+    <div className="bg-gray-900 py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-center text-base font-semibold text-[#29928F]">
+          {subheading}
+        </h2>
+        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          {heading}
+        </p>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+          {useCase?.[0] && (
+            <div className="relative lg:col-span-3 ">
+              <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+                <div className="relative h-80">
+                  <img
+                    alt={useCase[0].title}
+                    src={useCase[0].image}
+                    className="h-full w-full object-cover object-left"
+                  />
+                  <div className="absolute inset-px rounded-lg bg-gray-800/10 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-800 to-transparent" />
+                </div>
+                <div className="p-10 pt-4">
+                  <h3 className="text-sm/4 font-semibold text-[#29928F]">
+                    {useCase[0].accent}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white">
+                    {useCase[0].title}
+                  </p>
+                  <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
+                    {useCase[0].description}
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+            </div>
+          )}
+
+          {useCase?.[1] && (
+            <div className="relative lg:col-span-3">
+              <div className="absolute inset-px rounded-lg bg-gray-800  lg:rounded-tr-[2rem]" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+                <div className="relative h-80">
+                  <img
+                    alt={useCase[1].title}
+                    src={useCase[1].image}
+                    className="h-full w-full object-cover object-left"
+                  />
+                  <div className="absolute inset-px rounded-lg bg-gray-800/10 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-800 to-transparent" />
+                </div>
+                <div className="p-10 pt-4">
+                  <h3 className="text-sm/4 font-semibold text-[#29928F]">
+                    {useCase[1].accent}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white">
+                    {useCase[1].title}
+                  </p>
+                  <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
+                    {useCase[1].description}
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-tr-[2rem]" />
+            </div>
+          )}
+
+          {useCase?.[2] && (
+            <div className="relative lg:col-span-2">
+              <div className="absolute inset-px rounded-lg bg-gray-800 lg:rounded-bl-[2rem]" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
+                <div className="relative h-80">
+                  <img
+                    alt={useCase[2].title}
+                    src={useCase[2].image}
+                    className="h-full w-full object-cover object-left"
+                  />
+                  <div className="absolute inset-px rounded-lg bg-gray-800/10 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-800 to-transparent" />
+                </div>
+                <div className="p-10 pt-4">
+                  <h3 className="text-sm/4 font-semibold text-[#29928F]">
+                    {useCase[2].accent}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white">
+                    {useCase[2].title}
+                  </p>
+                  <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
+                    {useCase[2].description}
+
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-bl-[2rem]" />
+            </div>
+          )}
+          {useCase?.[3] && (
+            <div className="relative lg:col-span-2">
+              <div className="absolute inset-px rounded-lg bg-gray-800" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                <div className="relative h-80">
+                  <img
+                    alt={useCase[3].title}
+                    src={useCase[3].image}
+                    className="h-full w-full object-cover object-left"
+                  />
+                  <div className="absolute inset-px rounded-lg bg-gray-800/10 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-800 to-transparent" />
+                </div>
+                <div className="p-10 pt-4">
+                  <h3 className="text-sm/4 font-semibold text-[#29928F]">
+                    {useCase[3].accent}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white">
+                    {useCase[3].title}
+                  </p>
+                  <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
+                    {useCase[3].description}
+
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
+            </div>
+          )}
+          {useCase?.[4] && (
+            <div className="relative lg:col-span-2">
+              <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
+                <div className="relative h-80">
+                  <img
+                    alt={useCase[4].title}
+                    src={useCase[4].image}
+                    className="h-full w-full object-cover object-left"
+                  />
+                  <div className="absolute inset-px rounded-lg bg-gray-800/10 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
+                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-800 to-transparent" />
+                </div>
+                <div className="p-10 pt-4">
+                  <h3 className="text-sm/4 font-semibold text-[#29928F]">
+                    {useCase[4].accent}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white">
+                    {useCase[4].title}
+                  </p>
+                  <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
+                    {useCase[4].description}
+
+                  </p>
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
