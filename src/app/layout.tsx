@@ -119,7 +119,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`${inter.variable} h-full font-sans`}>
         <div className="flex min-h-screen flex-col">
           <Header />

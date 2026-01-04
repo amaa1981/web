@@ -3,9 +3,10 @@ import {
   Hero,
   AboutUs,
   Services,
+  AISolutions,
   Products,
   FAQ,
-  Contact,
+  Contact
 } from '@/components/sections'
 import { SITE_CONFIG } from '@/lib/constants'
 import { faqs } from '@/lib/data'
@@ -22,8 +23,8 @@ function getNodeText(node: React.ReactNode): string {
     return node.map(getNodeText).join('');
   }
   if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
-  return getNodeText(node.props.children);
-}
+    return getNodeText(node.props.children);
+  }
   return '';
 }
 
@@ -31,7 +32,7 @@ export const metadata = {
   title: "OpenCode Solutions",
   description:
     "OpenCode Solutions is a trusted IT partner, helping Saudi businesses modernize their IT through AI, containerization, automation, and secure open-source solutions.",
-    openGraph: {
+  openGraph: {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
     url: SITE_CONFIG.url,
@@ -42,14 +43,12 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "OpenCode Solutions | IT & AI Partner in Saudi",
-    description:
-      "Modern IT & AI-driven solutions for businesses in Saudi Arabia.",
+    description: "Modern IT & AI-driven solutions for businesses in Saudi Arabia.",
   },
 };
 
-
 export default function HomePage() {
-    const faqSchema = {
+  const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(faq => ({
@@ -61,16 +60,19 @@ export default function HomePage() {
       }
     }))
   };
+
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
       <AboutUs />
+      {/* I placed AISolutions here so it appears before the divider */}
+      <AISolutions />
+      <div className="my-8 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       <Services />
-      <div className="my-8  h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       <Products />
       <FAQ />
       <Contact />

@@ -4,14 +4,14 @@ import type { Stat } from "@/types";
 import Image from "next/image";
 
 const stats: Stat[] = [
-  { name: "Commitment to Open Source Innovation", value: "100% Dedication" },
+  { name: "Specialized in Computer Vision & Visual AI", value: "100% Dedication" },
   {
-    name: "Client-Focused, Fully Customized Solutions",
-    value: "Customized for You",
+    name: "Custom Neural Networks for Saudi Enterprises",
+    value: "Bespoke AI Models",
   },
   {
-    name: "Reliable Infrastructure for Business Growth",
-    value: "Scalable Systems",
+    name: "Built on Open-Source, Scalable Architectures",
+    value: "Transparent Tech",
   },
 ];
 
@@ -58,13 +58,18 @@ export default function AboutUs() {
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Who We Are
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            OpenCode is your trusted partner in open-source IT optimization,
-            automation, and AI-driven innovation. We deliver AI integration,
-            model development, Kubernetes, database design, and training
-            solutions tailored for success in the Saudi market, helping your
-            business modernize its operations with intelligence, efficiency, and
-            confidence.
+          <p className="mt-6 text-xl leading-8 text-gray-300 max-w-8xl">
+            <strong>OpenCode</strong> is a premier technology integrator specializing in 
+            <strong> Computer Vision</strong> and <strong>Intelligent Automation</strong>. 
+            We empower Saudi enterprises by transforming physical environments into 
+            actionable data. From AI-powered hygiene monitoring to industrial safety 
+            systems, we bridge the gap between open-source innovation and real-world 
+            operational intelligence.
+          </p>
+          <p className="mt-4 text-lg leading-8 text-gray-400 max-w-8xl">
+            We don&apos;t just provide software; we build the &quot;eyes&quot; and &quot;brains&quot; 
+            that help your business see, understand, and optimize its future in alignment 
+            with Saudi Vision 2030.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

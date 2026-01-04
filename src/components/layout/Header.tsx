@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "About Us", href: "/#about" },
+  { name: "AI Solutions", href: "/#ai-solutions" },
   { name: "Services", href: "/#services" },
   { name: "Products", href: "/#products" },
 ];
@@ -50,12 +51,12 @@ export default function HeaderContactButton() {
           <ul className="flex gap-x-12">
             {navigation.map((item) => (
               <li key={item.name}>
-                <a
+                <Link
                   href={item.href}
                   className="text-md font-semibold text-gray-900 hover:text-[#13787F] transition-colors"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -98,14 +99,14 @@ export default function HeaderContactButton() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="py-6">
