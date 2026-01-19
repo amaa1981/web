@@ -26,27 +26,18 @@ export default function FoodHygienePage() {
               Advanced computer vision and IoT integration designed to automate safety protocols 
               for Saudi Arabia's leading food and beverage providers.
             </p>
-            <button className="px-8 py-4 bg-[#13787F] text-white rounded-xl font-bold flex items-center gap-2">
-                Book a Technical Demo <ArrowRight size={18} />
-            </button>
           </div>
           
           {/* THE IMAGE BOX */}
-          <div className="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
-             {/* This will only show if the file exists in /public/images/food-hygiene-hero.png */}
+          <div className="relative w-full h-96 rounded-3xl overflow-hidden">
+             {/* UPDATED IMAGE SOURCE HERE */}
              <Image 
-              src="/images/food-hygiene-hero.png" 
-              alt="Food Hygiene AI"
+              src="/images/fh-image.png" 
+              alt="Food Hygiene AI Dashboard"
               fill
               className="object-cover"
               priority
              />
-             
-             {/* This is the "Live Analysis" label you asked about - it sits ON TOP of the photo */}
-             <div className="absolute top-6 left-6 flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full">
-                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-white text-[10px] font-bold uppercase tracking-widest">Live AI Analysis</span>
-             </div>
           </div>
         </div>
       </section>
