@@ -8,18 +8,20 @@ import { NAVIGATION_LINKS } from "@/lib/constants";
 import ContactDialog from "@/components/layout/ContactDialog";
 import Link from "next/link";
 
+// Updated navigation to include the new page
 const navigation = [
   { name: "About Us", href: "/#about" },
   { name: "AI Solutions", href: "/#ai-solutions" },
   { name: "Services", href: "/#services" },
   { name: "Products", href: "/#products" },
 ];
+
 export default function HeaderContactButton() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white ">
+    <header className="sticky top-0 z-50 bg-white shadow-sm"> {/* Added subtle shadow for polish */}
       <nav
         aria-label="Global"
         role="navigation"
@@ -29,13 +31,14 @@ export default function HeaderContactButton() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">OpenCode</span>
             <img
-              alt="OpenCode Solutions Logo - IT & Cloud Services Saudi Arabia"
+              alt="OpenCode Solutions Logo"
               src="/images/opencode-logo-black.svg"
               className="w-auto h-8 sm:h-10 md:h-12"
             />
           </Link>
         </div>
 
+        {/* Mobile Toggle */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -47,6 +50,7 @@ export default function HeaderContactButton() {
           </button>
         </div>
 
+        {/* Desktop Links */}
         <div className="hidden lg:flex lg:gap-x-12">
           <ul className="flex gap-x-12">
             {navigation.map((item) => (
@@ -70,22 +74,23 @@ export default function HeaderContactButton() {
         <ContactDialog open={open} onClose={() => setOpen(false)} />
       </nav>
 
+      {/* Mobile Menu */}
       <Dialog
         open={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-10" />
+        <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" /> {/* Added overlay polish */}
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="-m-1.5 p-1.5">
               <span className="sr-only">OpenCode</span>
               <img
-                alt="OpenCode Solutions Logo - IT & Cloud Services Saudi Arabia"
+                alt="OpenCode Solutions Logo"
                 src="/images/opencode-logo-black.svg"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -112,6 +117,7 @@ export default function HeaderContactButton() {
               <div className="py-6">
                 <Button
                   size="small"
+                  className="w-full" // Better for mobile
                   onClick={() => {
                     setOpen(true);
                     setMobileMenuOpen(false);

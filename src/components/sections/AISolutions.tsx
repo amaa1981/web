@@ -80,29 +80,36 @@ export default function AISolutions() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature) => (
-            <Link
-              key={feature.name}
-              href={`/services/${feature.name.toLowerCase().replace(/ & | /g, "-")}`}
-              className="group"
-            >
-              {/* Force the background to light gray and transition to brand teal */}
-              <div className="h-full bg-[#F3F4F6] rounded-2xl p-8 transition-all duration-300 group-hover:bg-[#13787F] cursor-pointer shadow-sm">
-                
-                {/* Icon Wrapper: Stays white, slightly transparent on hover */}
-                <div className="bg-white rounded-full flex justify-center items-center mb-6 w-12 h-12 transition-all duration-300 group-hover:bg-white/20">
-                  {feature.icon}
+          {features.map((feature) => {
+            // Logic to determine the correct URL
+            const isFoodHygiene = feature.name === "Food Hygiene Monitoring";
+            const linkHref = isFoodHygiene 
+              ? "/AISolutions/food-hygiene" 
+              : `/services/${feature.name.toLowerCase().replace(/ & | /g, "-")}`;
+
+            return (
+              <Link
+                key={feature.name}
+                href={linkHref}
+                className="group"
+              >
+                <div className="h-full bg-[#F3F4F6] rounded-2xl p-8 transition-all duration-300 group-hover:bg-[#13787F] cursor-pointer shadow-sm">
+                  
+                  {/* Icon Wrapper */}
+                  <div className="bg-white rounded-full flex justify-center items-center mb-6 w-12 h-12 transition-all duration-300 group-hover:bg-white/20">
+                    {feature.icon}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-white">
+                    {feature.name}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/90">
+                    {feature.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-white">
-                  {feature.name}
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/90">
-                  {feature.description}
-                </p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
