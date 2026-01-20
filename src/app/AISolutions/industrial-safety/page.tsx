@@ -38,7 +38,7 @@ export default function IndustrialSafetyPage() {
              <div className="absolute inset-0 bg-gradient-to-tr from-[#13787F]/10 to-transparent blur-[80px]" />
              
              <Image 
-              src="/images/safety.png" 
+              src="/images/Safety.jpeg" 
               alt="AI detecting safety helmets and vests on workers"
               fill
               priority

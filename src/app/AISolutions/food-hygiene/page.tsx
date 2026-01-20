@@ -32,7 +32,7 @@ export default function FoodHygienePage() {
           <div className="relative w-full h-96 rounded-3xl overflow-hidden">
              {/* UPDATED IMAGE SOURCE HERE */}
              <Image 
-              src="/images/fh-image.png" 
+              src="/images/Hygiene.jpeg" 
               alt="Food Hygiene AI Dashboard"
               fill
               className="object-cover"

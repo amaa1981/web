@@ -37,7 +37,7 @@ export default function ChatbotPage() {
             {/* THE IMAGE CONTAINER - COMPLETELY EDGELESS */}
             <div className="relative w-full h-[500px] flex justify-center items-center">
             <Image 
-                src="/images/chatbot-image.png" 
+                src="/images/Chatbot.jpeg" 
                 alt="AI Chatbot"
                 fill
                 className="object-contain" // This ensures the image keeps its natural shape
