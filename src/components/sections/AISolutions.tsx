@@ -61,7 +61,7 @@ export default function AISolutions() {
               linkHref = "/AISolutions/food-hygiene";
             } else if (feature.name === "Chatbots & Virtual Assistants") {
               linkHref = "/AISolutions/chatbots"; 
-            } else if (feature.name === "Industrial Safety & Security") {
+            } else if (feature.name === "Industrial Safety & Compliance") {
               linkHref = "/AISolutions/industrial-safety";
             } else {
               linkHref = `/services/${feature.name.toLowerCase().replace(/ & | /g, "-")}`;

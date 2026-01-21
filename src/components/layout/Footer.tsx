@@ -13,26 +13,8 @@ const navigation = {
     { name: "FAQ", href: "/#faq" },
     { name: "Contact", href: "/#contact" },
   ],
-  services: [
-    {
-      name: "IT Optimization & Automation",
-      href: "/services/it-optimization-automation",
-    },
-    {
-      name: "Artificial Intelligence",
-      href: "/services/artificial-intelligence",
-    },
-    { name: "Hybrid Cloud", href: "/services/hybrid-cloud" },
-    {
-      name: "Kubernetes & Containerization",
-      href: "/services/containerization",
-    },
-    {
-      name: "Database Design & Installation",
-      href: "/services/database-design",
-    },
-    { name: "Training", href: "/services/training" },
-  ],
+  // services: [
+  //],
   social: [
     // {
     //   name: 'Instagram',
@@ -164,19 +146,6 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-white">Services</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.services.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
