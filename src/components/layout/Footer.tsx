@@ -7,8 +7,9 @@ import { JSX, SVGProps } from "react";
 const navigation = {
   company: [
     { name: "About", href: "/#about" },
-    { name: "Services", href: "/#services" },
-    { name: "Products", href: "/#products" },
+    // { name: "Services", href: "/#services" },
+    // { name: "Products", href: "/#products" },
+    { name: "AI Solutions", href: "/#AISolutions" },
     { name: "FAQ", href: "/#faq" },
     { name: "Contact", href: "/#contact" },
   ],

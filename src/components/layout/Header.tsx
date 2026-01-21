@@ -12,8 +12,8 @@ import Link from "next/link";
 const navigation = [
   { name: "About Us", href: "/#about" },
   { name: "AI Solutions", href: "/#ai-solutions" },
-  { name: "Services", href: "/#services" },
-  { name: "Products", href: "/#products" },
+  // { name: "Services", href: "/#services" },
+  // { name: "Products", href: "/#products" },
 ];
 
 export default function HeaderContactButton() {

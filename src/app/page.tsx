@@ -2,12 +2,17 @@ import Image from "next/image";
 import {
   Hero,
   AboutUs,
-  Services,
+  // Services,
   AISolutions,
-  Products,
+  // Products,
   FAQ,
-  Contact
+  Contact,
+  // LogoCloud // <--- Option A: If you exported it from the 'sections' index file
 } from '@/components/sections'
+
+// Option B: Import directly if you haven't updated the @/components/sections/index.ts file yet
+// import LogoCloud from '@/components/sections/LogoCloud'; // <--- NEW (Uncomment this and use your actual component name)
+
 import { SITE_CONFIG } from '@/lib/constants'
 import { faqs } from '@/lib/data'
 import React from 'react';
@@ -29,21 +34,21 @@ function getNodeText(node: React.ReactNode): string {
 }
 
 export const metadata = {
-  title: "OpenCode Solutions",
+  title: "OpenCode AI | Advanced AI Solutions",
   description:
-    "OpenCode Solutions is a trusted IT partner, helping Saudi businesses modernize their IT through AI, containerization, automation, and secure open-source solutions.",
+    "OpenCode Solutions is your premier partner for AI Integration, Large Language Models (LLM), and intelligent automation in Saudi Arabia.",
   openGraph: {
-    title: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
+    title: "OpenCode AI | Advanced AI Solutions",
+    description: "Leading the AI transformation for businesses in Saudi Arabia with LLMs and Automation.",
     url: SITE_CONFIG.url,
-    siteName: "OpenCode Solutions",
+    siteName: "OpenCode AI",
     locale: "en_SA",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OpenCode Solutions | IT & AI Partner in Saudi",
-    description: "Modern IT & AI-driven solutions for businesses in Saudi Arabia.",
+    title: "OpenCode AI | AI & Automation Partner",
+    description: "Specialized AI, LLM, and Automation solutions for Saudi enterprises.",
   },
 };
 
@@ -68,12 +73,25 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
+      
+      {/* --- NEW SECTION PLACEMENT --- */}
+      {/* <LogoCloud /> */}  {/* <--- Uncomment this line and match the name of your import */}
+      
+      {/* --- HIDDEN SECTIONS START --- */}
+      
       <AboutUs />
-      {/* I placed AISolutions here so it appears before the divider */}
+      
       <AISolutions />
-      <div className="my-8 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-      <Services />
-      <Products />
+
+      {/* Divider is hidden because it separated sections that are now gone */}
+      {/* <div className="my-8 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div> */}
+      
+      {/* <Services /> */}
+      
+      {/* <Products /> */}
+      
+      {/* --- HIDDEN SECTIONS END --- */}
+
       <FAQ />
       <Contact />
     </>
