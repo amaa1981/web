@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image'; // Removed as we are using video now
 import { MessageSquare, ArrowRight, Bot, Sparkles, Languages } from 'lucide-react';
 import Link from 'next/link';
 
@@ -34,16 +34,19 @@ export default function ChatbotPage() {
             </p>
             </div>
             
-            {/* THE IMAGE CONTAINER - COMPLETELY EDGELESS */}
-            <div className="relative w-full h-[500px] flex justify-center items-center">
-            <Image 
-                src="/images/Chatbot.jpeg" 
-                alt="AI Chatbot"
-                fill
-                className="object-contain" // This ensures the image keeps its natural shape
-                priority
-            />
-            </div>
+            {/* THE VIDEO CONTAINER - EDGELESS */}
+            <div className="relative w-full h-[350px] flex justify-center items-center rounded-3xl overflow-hidden shadow-xl bg-slate-100">
+              <video 
+              // added scale-[1.03] to zoom in slightly and cut off the edges
+              className="w-full h-full object-cover scale-[1.03]" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              >
+              <source src="/images/AI-chat.mp4" type="video/mp4" />
+              </video>
+          </div>
         </div>
         </section>
 

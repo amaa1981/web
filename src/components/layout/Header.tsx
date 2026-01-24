@@ -8,10 +8,12 @@ import { NAVIGATION_LINKS } from "@/lib/constants";
 import ContactDialog from "@/components/layout/ContactDialog";
 import Link from "next/link";
 
-// Updated navigation to include the new page
+// Updated navigation to point to specific pages under AISolutions
 const navigation = [
   { name: "About Us", href: "/#about" },
-  { name: "AI Solutions", href: "/#ai-solutions" },
+  { name: "AI Hygiene Monitoring", href: "/AISolutions/food-hygiene" },
+  { name: "AI Chatbot", href: "/AISolutions/chatbots" },
+  { name: "AI Industrial Safety", href: "/AISolutions/industrial-safety" },
   // { name: "Services", href: "/#services" },
   // { name: "Products", href: "/#products" },
 ];
@@ -21,7 +23,7 @@ export default function HeaderContactButton() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm"> {/* Added subtle shadow for polish */}
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav
         aria-label="Global"
         role="navigation"
@@ -80,7 +82,7 @@ export default function HeaderContactButton() {
         onClose={() => setMobileMenuOpen(false)}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" /> {/* Added overlay polish */}
+        <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="-m-1.5 p-1.5">
@@ -117,7 +119,7 @@ export default function HeaderContactButton() {
               <div className="py-6">
                 <Button
                   size="small"
-                  className="w-full" // Better for mobile
+                  className="w-full"
                   onClick={() => {
                     setOpen(true);
                     setMobileMenuOpen(false);

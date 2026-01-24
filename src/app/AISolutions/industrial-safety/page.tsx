@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
-import { ArrowRight, ShieldCheck, ScanFace, HardHat, UserCheck, AlertCircle } from 'lucide-react';
+import Image from 'next/image'; // 1. Uncommented this import
+import { ArrowRight, ShieldCheck, HardHat, UserCheck, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function IndustrialSafetyPage() {
@@ -16,15 +16,16 @@ export default function IndustrialSafetyPage() {
 
       {/* 2. HERO SECTION */}
       <section className="pt-12 pb-24">
+        {/* REVERTED TO EXACT LAYOUT MATCHING HYGIENE PAGE (grid-cols-2) */}
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-2 text-[#13787F] mb-6">
                <ShieldCheck size={20} />
                <span className="text-sm font-bold uppercase tracking-widest">PPE Compliance AI</span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-              Automated Safety <br />
-              <span className="text-[#13787F]"></span>
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">            
+            Industrial <br />
+              <span className="text-[#13787F]">Safety & Compliance</span>
             </h1>
             <p className="text-xl text-slate-500 mb-10 leading-relaxed">
               Ensure every worker on-site is protected. Our Computer Vision technology 
@@ -33,15 +34,15 @@ export default function IndustrialSafetyPage() {
             </p>
           </div>
           
-          {/* THE IMAGE CONTAINER - NO SHARP EDGES */}
-          <div className="relative w-full h-[500px] flex justify-center items-center group">
-             <div className="absolute inset-0 bg-gradient-to-tr from-[#13787F]/10 to-transparent blur-[80px]" />
-             
+          {/* THE IMAGE BOX */}
+          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl bg-slate-100">
+             {/* 2. Changed Video to Image Component */}
              <Image 
-              src="/images/Safety.jpeg" 
-              alt="AI detecting safety helmets and vests on workers"
-              fill
-              priority
+               src="/images/AI-industrial.png"
+               alt="Industrial Safety AI Analysis"
+               fill
+               className="object-cover"
+               priority
              />
           </div>
         </div>

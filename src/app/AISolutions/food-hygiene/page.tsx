@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image'; 
 import { ShieldCheck, ArrowRight, Camera } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,16 +28,22 @@ export default function FoodHygienePage() {
             </p>
           </div>
           
-          {/* THE IMAGE BOX */}
-          <div className="relative w-full h-96 rounded-3xl overflow-hidden">
-             {/* UPDATED IMAGE SOURCE HERE */}
-             <Image 
-              src="/images/Hygiene.jpeg" 
-              alt="Food Hygiene AI Dashboard"
-              fill
-              className="object-cover"
-              priority
-             />
+          {/* THE VIDEO BOX */}
+          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl bg-slate-100">
+             {/* Correction: 
+                If file is in public/images/AI-Hygiene.mp4, 
+                src must be "/images/AI-Hygiene.mp4" 
+             */}
+             <video 
+               className="w-full h-full object-cover"
+               autoPlay 
+               loop 
+               muted 
+               playsInline
+             >
+               <source src="/images/AI-Hygiene.mp4" type="video/mp4" />
+               Your browser does not support the video tag.
+             </video>
           </div>
         </div>
       </section>
@@ -53,7 +59,7 @@ export default function FoodHygienePage() {
               <p className="text-slate-600 text-lg lg:text-xl leading-relaxed text-justify">
                 Achieve <strong>100% regulatory compliance</strong> with zero human oversight. 
                 Utilizing advanced object detection and neural networks, our system monitors staff 
-                movements in real-time to ensure that <strong>hairnets, gloves, and face protection</strong> 
+                movements in real-time to ensure that <strong> hairnets, gloves, and face protection </strong> 
                 are correctly worn before any individual is granted access to sterile food preparation environments.
               </p>
               <p className="text-slate-600 text-lg lg:text-xl leading-relaxed text-justify">
