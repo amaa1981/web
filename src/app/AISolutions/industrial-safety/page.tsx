@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Image from 'next/image'; // 1. Uncommented this import
+// import Image from 'next/image'; // Removed unused Image import
 import { ArrowRight, ShieldCheck, HardHat, UserCheck, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,7 +24,7 @@ export default function IndustrialSafetyPage() {
                <span className="text-sm font-bold uppercase tracking-widest">PPE Compliance AI</span>
             </div>
             <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">            
-            Industrial <br />
+              Industrial <br />
               <span className="text-[#13787F]">Safety & Compliance</span>
             </h1>
             <p className="text-xl text-slate-500 mb-10 leading-relaxed">
@@ -33,17 +33,21 @@ export default function IndustrialSafetyPage() {
               real-time alerts to prevent accidents before they happen.
             </p>
           </div>
-          
-          {/* THE IMAGE BOX */}
-          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl bg-slate-100">
-             {/* 2. Changed Video to Image Component */}
-             <Image 
-               src="/images/AI-industrial.png"
-               alt="Industrial Safety AI Analysis"
-               fill
-               className="object-cover"
-               priority
-             />
+           
+          {/* THE MEDIA BOX */}
+          <div className="relative w-full h-81 rounded-3xl overflow-hidden shadow-xl bg-slate-100">
+             {/* Switched to Video Component */}
+             <video 
+               className="w-full h-full object-cover"
+               autoPlay 
+               loop 
+               muted 
+               playsInline
+             >
+               {/* UPDATE THE SRC BELOW TO YOUR ACTUAL VIDEO FILE PATH */}
+               <source src="/images/industrial-safety.mp4" type="video/mp4" />
+               Your browser does not support the video tag.
+             </video>
           </div>
         </div>
       </section>
